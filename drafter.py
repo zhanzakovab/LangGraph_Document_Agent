@@ -6,6 +6,7 @@ from langchain_core.tools import tool
 from langgraph.graph.message import add_messages
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
+import os
 
 load_dotenv()
 
@@ -37,12 +38,16 @@ def save_document(filename: str) -> str:
     if not filename.endswith(".txt"):
         filename = f"{filename}.txt"
 
+    drafts = "drafts"
+    os.makedirs(drafts, exist_ok=True)
+  
+    filepath = os.path.join(drafts, filename)
     
     try:
-        with open(filename, "w") as f:
+        with open(filepath, "w") as f:
             f.write(document_content)
-        print(f"Document saved to {filename}")
-        return f"Document saved to {filename}"
+        print(f"Document saved to {filepath}")
+        return f"Document saved to {filepath}"
     except Exception as e:
         return f"Error saving document: {str(e)}"
 

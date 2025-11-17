@@ -2,4 +2,7 @@ python-dotenv
 langchain-core
 langchain-openai
 langgraph
-
+langchain-chroma
+langchain-text-splitters
+langchain-community
+pypdf

@@ -10,4 +10,5 @@ venv/
 env/
 ENV/
 .venv
+chroma_db/
 
