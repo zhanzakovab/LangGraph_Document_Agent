@@ -1,0 +1,13 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.txt
+!requirement.txt
+venv/
+env/
+ENV/
+.venv
+
